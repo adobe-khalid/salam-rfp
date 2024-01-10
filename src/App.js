@@ -199,7 +199,7 @@ export default function App() {
   }
 
   function defaultValue(arr) {
-    console.log('defaultValue', arr[2].value)
+    console.log('defaultValue', arr[0].value)
     return arr[2].value;
   }
 
