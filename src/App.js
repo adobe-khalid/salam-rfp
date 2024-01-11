@@ -50,7 +50,7 @@ const CustomSlider = ({
             {label}
           </Typography>
           <Slider
-            sx={{ p: "10px", width: "85%" }}
+            sx={{ p: "10px", width: "85%", color: '#05ad43' }}
             aria-label="Custom marks"
             defaultValue={defaultVal}
             getAriaValueText={ariaValueText}
@@ -168,7 +168,7 @@ export default function App() {
             sx={{ width: "100%", p: "10px", m: "20px 0px" }}
           >
             <Button
-              sx={{ borderRadius: 28, width: 150 }}
+              sx={{ borderRadius: 28, width: 150, backgroundColor: '#05ad43' }}
               variant="contained"
               size="large"
               onClick={handleCalculate}

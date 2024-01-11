@@ -13,12 +13,9 @@
   margin: 0 auto;
 }
 
-.calc .css-1m3tel9-MuiButtonBase-root-MuiButton-root {
-  background-color: #05ad43 !important;
-}
-
-.css-sm3wc6-MuiSlider-root {
-  color: #05ad43 !important;
+button:hover {
+  color: white;
+  background-color: #02712b !important;
 }
 
 button.selected {
@@ -28,8 +25,4 @@ button.selected {
 button.unselected {
   background-color: transparent;
   color: black;
-}
-button:hover {
-  color: white;
-  background-color: #02712b !important;
 }
