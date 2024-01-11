@@ -6,11 +6,6 @@ import CardContent from "@mui/material/CardContent";
 import AppBar from "@mui/material/AppBar";
 import React, { useEffect, useState, useRef } from "react";
 import Stack from "@mui/material/Stack";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 
 import {
   validity,
@@ -41,6 +36,7 @@ const CustomSlider = ({
   min,
   max,
   marks,
+  onchange,
 }) => {
   return (
     <Box sx={{ width: "100%", m: "10px" }}>
@@ -59,6 +55,7 @@ const CustomSlider = ({
             max={max}
             valueLabelDisplay="off"
             marks={marks}
+            onChange={onchange}
           />
         </CardContent>
       </Card>
@@ -69,10 +66,31 @@ export default function App() {
   const [isCalculated, setIsCalculated] = useState(false);
   const [value, setValue] = React.useState("20 GB");
   const [isPrepaid, setIsPrepaid] = React.useState(true);
+  const [selectedDataPlan, setSelectedDataPlan] = useState([]);
+  const [calculationData, setCalculationData] = useState([]);
+
+  const cardData = {
+    50: {
+      planName: "Solo 99",
+      addOn: "20 GB",
+      price: "158.85 SAR",
+    },
+    100: {
+      planName: "Solo 240",
+      addOn: "20 GB",
+      price: "331 SAR",
+    },
+    150: {
+      planName: "Solo 340",
+      addOn: "40 GB",
+      price: "446 SAR",
+    },
+  };
 
   const ref = useRef(null);
 
   const handleCalculate = () => {
+    setCalculationData(selectedDataPlan);
     setIsCalculated(true);
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -82,9 +100,9 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" >
       <AppBar position="static" sx={{ backgroundColor: "#002035" }}>
-         {" "}
+        {" "}
         <img
           src="https://salammobile.sa/wp-content/uploads/2022/03/mySalamLogo-min.png.webp"
           width="70"
@@ -136,6 +154,7 @@ export default function App() {
           max={300}
           defaultVal={0}
           marks={dataLimit}
+          onchange={(e) => setSelectedDataPlan(e.target.value)}
         />
         <CustomSlider
           label="Data (Social Media)"
@@ -193,7 +212,10 @@ export default function App() {
                         Recommanded Plan
                       </Typography>
                       <Typography gutterBottom component="div">
-                        Solo 99
+                        {cardData[calculationData]
+                          ? cardData[calculationData].planName
+                          : "Solo 99"}
+
                       </Typography>
                     </Stack>
                     <Stack
@@ -205,7 +227,9 @@ export default function App() {
                         Add On
                       </Typography>
                       <Typography gutterBottom component="div">
-                        15 GB
+                        {cardData[calculationData]
+                          ? cardData[calculationData].addOn
+                          : "20 GB"}
                       </Typography>
                     </Stack>
                     <Stack
@@ -217,7 +241,9 @@ export default function App() {
                         Total Price
                       </Typography>
                       <Typography gutterBottom component="div">
-                        158.85 SAR
+                        {cardData[calculationData]
+                          ? cardData[calculationData].price
+                          : "158.78 SAR"}
                       </Typography>
                     </Stack>
                   </Typography>

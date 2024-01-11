@@ -26,3 +26,9 @@ button.unselected {
   background-color: transparent;
   color: black;
 }
+
+@media screen and (max-width: 600px) {
+  .MuiSlider-markLabel {
+    font-size: 12px;
+  }
+}
