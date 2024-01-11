@@ -39,7 +39,7 @@ const CustomSlider = ({
   onchange,
 }) => {
   return (
-    <Box sx={{ width: "100%", m: "10px" }}>
+    <Box sx={{ width: "100%", mb: "30px" }}>
       <Card sx={{ minWidth: "100%" }}>
         <CardContent>
           <Typography sx={{ fontSize: 14, fontWeight: "bold" }} align="left">
@@ -105,14 +105,15 @@ export default function App() {
         {" "}
         <img
           src="https://salammobile.sa/wp-content/uploads/2022/03/mySalamLogo-min.png.webp"
-          width="70"
+          width="120"
           alt="Header"
+          className="logo-img"
         />
       </AppBar>
       <div className="container">
         <div>
           <Typography
-            sx={{ fontSize: 14, fontWeight: "bold", m: "30px" }}
+            sx={{ fontSize: 18, fontWeight: "bold", mt: "20px" }}
             align="left"
           >
             Choose a billing type
@@ -120,7 +121,7 @@ export default function App() {
           <Box
             display="flex"
             justifyContent="space-between"
-            sx={{ width: 350, m: "30px" }}
+            sx={{ width: 350, m: "20px 0 30px 0" }}
           >
             <Button
               sx={{ borderRadius: 28, width: 150 }}
@@ -184,7 +185,7 @@ export default function App() {
           <Box
             display="flex"
             justifyContent="center"
-            sx={{ width: "100%", p: "10px", m: "20px 0px" }}
+            sx={{ width: "calc(100% - 20px)", p: "10px", m: "20px 0px" }}
           >
             <Button
               sx={{ borderRadius: 28, width: 150, backgroundColor: '#05ad43' }}

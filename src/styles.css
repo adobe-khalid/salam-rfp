@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -7,10 +17,15 @@
   background-color: #002035;
 }
 
+.logo-img {
+  position: relative;
+  top: 50px;
+}
+
 .container {
   width: 100%;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
 }
 
 button:hover {
@@ -27,8 +42,12 @@ button.unselected {
   color: black;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .MuiSlider-markLabel {
-    font-size: 12px;
+    font-size: 12px !important;
+  }
+
+  .container {
+    padding: 0 10px;
   }
 }
