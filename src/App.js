@@ -131,7 +131,7 @@ export default function App() {
         <CustomSlider
           label="Data (Regular)"
           ariaValueText={dataLimitText}
-          step={10}
+          step={50}
           min={0}
           max={300}
           defaultVal={0}
